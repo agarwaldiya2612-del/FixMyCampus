@@ -1,10 +1,10 @@
 # FixMyCampus
 
-FixMyCampus is a Java OOP lab project based on the submitted campus issue reporting synopsis. Students can report campus issues, vote on them, discuss them, prepare and sign an application, and track progress. Technicians can view assigned work and update issue status.
+FixMyCampus is a Java OOP lab project based on the submitted campus issue reporting synopsis. The repository contains a console version and a lightweight browser version. The browser version has a responsive HTML/CSS/JavaScript interface connected to a Java HTTP server.
 
 ## Project scope
 
-The synopsis describes a full web application using Java, a web frontend, and MySQL. This beginner-friendly version is a console application that runs with a JDK and saves records in a local data file. Image paths are recorded as text; this version does not upload images. It does not provide secure passwords, real college email verification, a web interface, or MySQL. Those are future extensions for the full platform.
+The synopsis describes a full web application using Java, a web frontend, and MySQL. This beginner-friendly project runs locally with a JDK and saves records in local data files. The web version supports issue reporting, voting, discussion, filtering, sorting, and status display. The console version also demonstrates technician assignment, application drafts and signatures, ratings, and status updates. Image paths are not uploaded in the web version. MySQL, secure passwords, verified email, and production deployment remain future extensions.
 
 ## OOP concepts
 
@@ -38,6 +38,16 @@ java -cp out Main
 ```
 
 On Windows, you can also run `run.bat` by double-clicking it or typing `run.bat` in Command Prompt.
+
+## Run the web frontend
+
+1. Open the project folder that contains `run-web.bat`.
+2. Double-click `run-web.bat` and leave the black window open while using the site.
+3. Open a browser and visit `http://localhost:8080`.
+4. Report an issue, vote, or add a discussion message. Refreshing the page keeps saved issues.
+5. Close the server by clicking its Command Prompt window and pressing `Ctrl+C`.
+
+If you compile manually, run `javac -d out src\Main.java src\WebServer.java` then `java -cp out WebServer` from the project folder. The server and browser must run on the same computer for the local address to work.
 
 ## First use
 
