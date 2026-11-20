@@ -129,8 +129,9 @@ public class Main {
             System.out.println("\nTechnician: " + tech.name + " | Skill: " + tech.skill + " | Open jobs: " + tech.openJobs);
             System.out.println("1. View assigned issues\n2. Update assigned issue\n3. Change availability\n4. Log out");
             int choice = readInt("Choose: ", 1, 4);
-            if (choice == 1) for (Issue issue : data.issues) if (issue.technicianEmail.equals(tech.email)) printIssue(issue);
-            else if (choice == 2) {
+            if (choice == 1) {
+                for (Issue assignedIssue : data.issues) if (assignedIssue.technicianEmail.equals(tech.email)) printIssue(assignedIssue);
+            } else if (choice == 2) {
                 Issue issue = findIssue(readInt("Issue ID: ", 1, Integer.MAX_VALUE));
                 if (issue != null && issue.technicianEmail.equals(tech.email)) changeStatus(issue);
                 else System.out.println("That issue is not assigned to you.");
